@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot - POST-GET AJAX Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Sign Up</h1>
+    <form action="#" th:action="@{/register}" th:object="${customer}" method="post">
+        <div class="row" style="margin-top:20px">
+            <div class="col-sm-2">
+                <label>TelegramID:</label>
+            </div>
+            <div class="col-sm-2">
+                <input id="telegramID" type="text" th:field="*{telegram}">
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px">
+            <div class="col-sm-2">
+                <label for="email">Email address:</label>
+            </div>
+            <div class="col-sm-2">
+                <input type="email" class="form-control" id="email" th:field="*{email}">
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-top:20px">
+            <div class="col-sm-2">
+                <label>Ceiling:</label>
+            </div>
+            <div class="col-sm-2">
+                <input type="number" class="form-control" id="ceiling" th:field="*{high}">
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:20px">
+            <div class="col-sm-2">
+                <label for="floor">Floor:</label>
+            </div>
+            <div class="col-sm-2">
+                <input type="number" class="form-control" id="floor" th:field="*{low}">
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-top:20px">
+            <div class="col-sm-2">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" th:field="*{symbol}" value="BTC/USDT"> BTC/USDT
+                </label>
+            </div>
+            <div class="col-sm-2">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" th:field="*{symbol}" value="ETH/USDT"> ETH/USDT
+                </label>
+            </div>
+            <div class="col-sm-2">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" th:field="*{symbol}" value="LTC/USDT"> LTC/USDT
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="modalId" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Bootstrap Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="greetingId"></p>
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/getrequest.js"></script>
+</body>
+
+</html>
