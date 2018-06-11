@@ -131,7 +131,7 @@ a:focus, a:hover {
   background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
   background-color: #3d1168;
   -webkit-background-size: cover;
-  -moz-background-size: cover;
+  -moz-background-size: 720px 432px;
   -o-background-size: cover;
   background-size: cover;
 }
@@ -188,7 +188,7 @@ a:focus, a:hover {
   padding-bottom: 150px;
 }
 
-.download-section {
+.Register-section {
   color: white;
   background-color: #3d1168;
   -webkit-background-size: cover;
