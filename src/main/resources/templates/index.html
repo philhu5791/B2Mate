@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
 
     <meta charset="utf-8">
@@ -11,8 +11,7 @@
     <title>B2mate Homepage beta</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -74,8 +73,85 @@
 
     <!-- Regiter Section please add you code here -->
     <section id="Register" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Register</h2>
+            <form action="#" th:action="@{/register}" th:object="${customer}" method="post">
+              <div class="row" style="margin-top:20px">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4 float-left text-left" >
+                  <label>TelegramID:</label>
+                </div>
+                <div class="col-lg-4">
+                  <input id="telegramID" class="form-control" type="text" th:field="*{telegram}">
+                </div>
+              </div>
+              <div class="row" style="margin-top:20px">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4 float-left text-left">
+                  <label for="email">Email address:</label>
+                </div>
+                <div class="col-lg-4">
+                  <input type="email" class="form-control" id="email" th:field="*{email}">
+                </div>
+              </div>
 
+
+              <div class="row" style="margin-top:20px">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4 float-left text-left">
+                  <label style="text-align:left">Ceiling:</label>
+                </div>
+                <div class="col-lg-4">
+                  <input type="number" class="form-control" id="ceiling" th:field="*{high}">
+                </div>
+              </div>
+
+              <div class="row" style="margin-top:20px">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4 float-left text-left">
+                  <label for="floor">Floor:</label>
+                </div>
+                <div class="col-lg-4">
+                  <input type="number" class="form-control" id="floor" th:field="*{low}">
+                </div>
+              </div>
+
+
+              <br>
+              <div class="row" style="margin-left:10px">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" th:field="*{symbol}" value="BTC/USDT"> BTC/USDT
+                  </label>
+                </div>
+                <div class="col-lg-2">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" th:field="*{symbol}" value="ETH/USDT"> ETH/USDT
+                  </label>
+                </div>
+                <div class="col-lg-2">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" th:field="*{symbol}" value="LTC/USDT"> LTC/USDT
+                  </label>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <p> <button type="submit" class="btn btn-primary btn-block" >Submit</button></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
+
 
     <!-- Price Section -->
     <section id="Real Time Price Movement" class="download-section content-section text-center">
@@ -123,8 +199,8 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

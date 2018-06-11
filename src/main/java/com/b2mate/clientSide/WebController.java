@@ -19,7 +19,8 @@ public class WebController {
     private CustomerRepository repository;
 
     @RequestMapping(value="/",method = RequestMethod.GET)
-    public String home(){
+    public String home(Model model){
+        model.addAttribute("customer", new Customer());
         return "index";
     }
 
