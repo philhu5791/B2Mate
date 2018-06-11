@@ -20,14 +20,7 @@ public class WebController {
 
     @RequestMapping(value="/",method = RequestMethod.GET)
     public String home(){
-        StringBuilder sb = new StringBuilder();
-        for (Customer customer : repository.findAll()) {
-            System.out.println(customer);
-            sb.append(customer.toString());
-            sb.append("\n");
-        }
-        System.out.println();
-        return sb.toString();
+        return "index";
     }
 
     @ResponseBody
